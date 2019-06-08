@@ -15,6 +15,7 @@
 //! currently Chrono supports [one built-in syntax closely resembling
 //! C's `strftime` format](./strftime/index.html).
 
+use std::prelude::v1::*;
 use std::fmt;
 use std::str::FromStr;
 use std::error::Error;
@@ -303,6 +304,7 @@ enum ParseErrorKind {
 /// Same to `Result<T, ParseError>`.
 pub type ParseResult<T> = Result<T, ParseError>;
 
+#[allow(deprecated)]
 impl fmt::Display for ParseError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         self.description().fmt(f)

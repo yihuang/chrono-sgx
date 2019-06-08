@@ -10,6 +10,7 @@
 
 //! Temporal quantification
 
+use std::prelude::v1::*;
 use std::{fmt, i64};
 use std::error::Error;
 use std::ops::{Add, Sub, Mul, Div, Neg};
@@ -392,6 +393,7 @@ impl fmt::Display for Duration {
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct OutOfRangeError(());
 
+#[allow(deprecated)]
 impl fmt::Display for OutOfRangeError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "{}", self.description())
